@@ -17,6 +17,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>Yarn Start with gh-pages</p>
       </header>
     </div>
   );

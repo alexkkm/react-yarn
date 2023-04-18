@@ -75,3 +75,10 @@ yarn cache clean //清除缓存
 
 ## 初始化项目
 yarn create react-app nameofproject
+
+
+## gh-pages deploy with message
+npm run deploy -- -m "Deploy React app to GitHub Pages"
+
+## gh-pages deploy without message
+npm run deploy

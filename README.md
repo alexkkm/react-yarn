@@ -78,7 +78,7 @@ yarn create react-app nameofproject
 
 
 ## gh-pages deploy with message
-npm run deploy -- -m "Deploy React app to GitHub Pages"
+yarn run deploy -- -m "Deploy React app to GitHub Pages"
 
 ## gh-pages deploy without message
-npm run deploy
+yarn run deploy

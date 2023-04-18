@@ -1,3 +1,6 @@
+# gh-page url
+https://alexkkm.github.io/react-yarn
+
 # Yarn 的安装
 Yarn 的安装比较简单，直接使用npm命令即可，这样的前提是你已经安装了 Node.js，命令如下：
 ## 检查是否具有node.js

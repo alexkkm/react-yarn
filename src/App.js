@@ -29,6 +29,7 @@ class Home extends React.Component {
           <p>Yarn Start with gh-pages</p>
           <Link to="/route">Link of back to Index</Link>
           <Link to="/component">Link of back to Index</Link>
+          <h3>Button is not available now</h3>
           <button onClick={() => RouteTo('route')}>Route</button>
           <button onClick={() => RouteTo('component')}>Component</button>
         </header>

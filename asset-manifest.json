@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-yarn/static/css/main.9d347509.css",
-    "main.js": "/react-yarn/static/js/main.2cc84cac.js",
+    "main.js": "/react-yarn/static/js/main.5122ad03.js",
     "index.html": "/react-yarn/index.html",
     "main.9d347509.css.map": "/react-yarn/static/css/main.9d347509.css.map",
-    "main.2cc84cac.js.map": "/react-yarn/static/js/main.2cc84cac.js.map"
+    "main.5122ad03.js.map": "/react-yarn/static/js/main.5122ad03.js.map"
   },
   "entrypoints": [
     "static/css/main.9d347509.css",
-    "static/js/main.2cc84cac.js"
+    "static/js/main.5122ad03.js"
   ]
 }

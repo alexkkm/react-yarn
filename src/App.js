@@ -1,9 +1,12 @@
 import React from 'react';
 import './App.css';
+import { Link } from 'react-router-dom';
 
 // Additional Functions
+//TODO Fix the bug of url of gh-pages
 function RouteTo(url) {
   window.location = "./" + url;
+  //* Needed add project name before the url, because of gh-pages function
 }
 
 class Home extends React.Component {
@@ -24,6 +27,8 @@ class Home extends React.Component {
             Learn React
           </a>
           <p>Yarn Start with gh-pages</p>
+          <Link to="/route">Link of back to Index</Link>
+          <Link to="/component">Link of back to Index</Link>
           <button onClick={() => RouteTo('route')}>Route</button>
           <button onClick={() => RouteTo('component')}>Component</button>
         </header>
@@ -32,10 +37,10 @@ class Home extends React.Component {
   }
 }
 
-function App() {
-  return (
-    <Home />
-  );
+export default class App extends React.Component {
+  render() {
+    return (
+      <Home />
+    );
+  }
 }
-
-export default App;

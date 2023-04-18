@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-// // Clock implement by React Hook
+// Clock implement by React Hook
 export function HookClock(){
     const [time,updateTime]=useState(0);
 

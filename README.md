@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Yarn 的安装
+Yarn 的安装比较简单，直接使用npm命令即可，这样的前提是你已经安装了 Node.js，命令如下：
+## 检查是否具有node.js
+node-v
+## 安装yarn
+npm install -g yarn
+## 安装完成之后可以通过如下命令检测是否安装成功：
+yarn -v
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+如果提示版本号则安装完成，提示的版本号为1.X.X就表示安装成功了
 
-## Available Scripts
 
-In the project directory, you can run:
+# Yarn 的常用命令
+## 初始化
+yarn init
 
-### `yarn start`
+## 添加依赖包
+yarn add [package] //会自动安装最新版本，会覆盖指定版本号
+yarn add [package] [package] [package] //一次性添加多个包
+yarn add [package]@[version] //添加指定版本的包
+yarn add [package]@[tag] //安装某个tag（比如beta,next或者latest）
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 将依赖项添加到不同依赖项类别
+## 不指定依赖类型默认安装到dependencies里，你也可以指定依赖类型分别添加到devDependencies、peerDependencies和optionalDependencies。
+## 加到 devDependencies
+yarn add [package] --dev
+## 或
+yarn add [package] -D
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 加到 peerDependencies
+yarn add [package] --peer
+## 或
+yarn add [package] -P
 
-### `yarn test`
+## 加到 optionalDependencies
+yarn add [package] --optional
+or
+yarn add [package] -O
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## 升级依赖包
+yarn upgrade [package] //升级到最新版本
+yarn upgrade [package]@[version] //升级到指定版本
+yarn upgrade [package]@[tag] //升级到指定tag
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 移除依赖包
+yarn remove [package] //移除包
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 从 package.json 里安装依赖，并将依赖项保存进 yarn.lock
+yarn //安装所有依赖
+yarn install //安装所有依赖
+yarn install --flat //安装一个包的单一版本
+yarn install --force //强制重新下载所有包
+yarn install --production //只安装生产环境依赖
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 发布包
+yarn publish
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 运行脚本
+yarn run //用来执行在 package.json 中 scripts 属性下定义的脚本
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## 显示某个包的信息
+yarn info [package] //可以用来查看某个模块的最新版本信息
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 缓存
+yarn cache
+yarn cache list //列出已缓存的每个包
+yarn cache dir //返回全局缓存位置
+yarn cache clean //清除缓存
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 初始化项目
+yarn create react-app nameofproject

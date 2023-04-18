@@ -13,10 +13,14 @@ root.render(
       <Route path="/" Component={App} />
       <Route path="/undefined" Component={App} />
       <Route path="/home" Component={App} />
-      <Route path="/route" Component={<RoutePage />} />
-      <Route path="/component" Component={<ComponentPage />} />
+      <Route path="/route" Component={RoutePage} />
+      <Route path="/component" Component={ComponentPage} />
     </Routes>
   </BrowserRouter>
-);  //! use Component instead of element in Route tag
+);
+//! Important Notes
+//! use Component instead of element in Route tag
+//! in Component field, dont use tag, use Component directly instead
+
 
 

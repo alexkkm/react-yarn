@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import RoutePage from './route';
 import ComponentPage from './component';
-import TestPage from './test';
+import RoutePage2 from './route2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,10 +18,11 @@ root.render(
       <Route path="/home" Component={App} />
       <Route path="/route" Component={RoutePage} />
       <Route path="/component" Component={ComponentPage} />
-      <Route path='/test' Component={TestPage} />
+      <Route path='/test' Component={RoutePage2} />
     </Routes>
   </BrowserRouter>
 );
+
 //! Important Notes
 //! use Component instead of element in Route tag
 //! in Component field, dont use tag, use Component directly instead

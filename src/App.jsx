@@ -1,15 +1,19 @@
+// Basic tools
 import React from 'react';
-import './App.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
+// Decoration for app.jsx
+import './App.css';
 
 // Button for navigation
 function NavigationButton(props) {
 
-  const url = props.url;
-  const title = props.title;
-  const data = props.data;
+  //parameters for setting the route
+  const url = props.url;  //define the url of routing destination
+  const title = props.title;  //define the title of the button
+  const data = props.data;  //the data passing to the destination page
 
+  //please follow the below code strictly
   const navigate = useNavigate();
 
   const route = () => {
@@ -23,8 +27,8 @@ function NavigationButton(props) {
   );
 }
 
-
-class Home extends React.Component {
+// Home Page of the app
+export default class App extends React.Component {
   render() {
     return (
       <div className="Home">
@@ -42,21 +46,12 @@ class Home extends React.Component {
             Learn React
           </a>
           <p>Yarn Start with gh-pages</p>
-          <Link to="/route">Link of back to Index</Link>
-          <Link to="/component">Link of back to Index</Link>
-          <h3>Navigation Button</h3>
-          <NavigationButton url="./test" title="To test" data={"Message passed from Home"} />
-          <NavigationButton url="./route" title="To route" />
+          <p>Functions implemented:</p>
+          <NavigationButton url="./route" title="Route Page" />
         </header>
       </div>
     );
   }
 }
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <Home />
-    );
-  }
-}
+

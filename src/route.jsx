@@ -1,14 +1,28 @@
 // Basic tools
 import React,{Component} from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
-//TODO Fix the bug of url of gh-pages
-function RouteTo(url) {
-  window.location="./"+url;
-  //* Needed add project name before the url, because of gh-pages function
+// Button for navigation
+function NavigationButton(props) {
+
+  const url = props.url;
+  const title = props.title;
+  const data = props.data;
+
+  const navigate = useNavigate();
+
+  const route = () => {
+    navigate(url, { state: { id: 1, data: data } });
+  }
+
+  return (
+    <div>
+      <button onClick={() => { route() }}>{title}</button>
+    </div>
+  );
 }
 
-//TODO FIx the button for routing
+
 export default class RoutePage extends Component {
   render() {
     return (
@@ -17,10 +31,9 @@ export default class RoutePage extends Component {
         <p>First Page</p>
 
         <h2>Tools for changing page:</h2>
-        <Link to="/">Link of back to Index</Link>
+        <Link to="/">Link of back to Home</Link>
         
         <p>Button are now disable</p>
-        <button onClick={()=>RouteTo("/")}>Button of back To Index</button>
         
       </div>
     );

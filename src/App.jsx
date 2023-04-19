@@ -1,13 +1,28 @@
 import React from 'react';
 import './App.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-// Additional Functions
-//TODO Fix the bug of url of gh-pages
-function RouteTo(url) {
-  window.location = "./" + url;
-  //* Needed add project name before the url, because of gh-pages function
+
+// Button for navigation
+function NavigationButton(props) {
+
+  const url = props.url;
+  const title = props.title;
+  const data = props.data;
+
+  const navigate = useNavigate();
+
+  const route = () => {
+    navigate(url, { state: { id: 1, data: data } });
+  }
+
+  return (
+    <div>
+      <button onClick={() => { route() }}>{title}</button>
+    </div>
+  );
 }
+
 
 class Home extends React.Component {
   render() {
@@ -29,9 +44,9 @@ class Home extends React.Component {
           <p>Yarn Start with gh-pages</p>
           <Link to="/route">Link of back to Index</Link>
           <Link to="/component">Link of back to Index</Link>
-          <h3>Button is not available now</h3>
-          <button onClick={() => RouteTo('route')}>Route</button>
-          <button onClick={() => RouteTo('component')}>Component</button>
+          <h3>Navigation Button</h3>
+          <NavigationButton url="./test" title="To test" data={"Message passed from Home"} />
+          <NavigationButton url="./route" title="To route" />
         </header>
       </div>
     );

@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import RoutePage from './route';
+import RoutePage from './route/route';
 import ComponentPage from './component';
-import RoutePage2 from './route2';
+import RouteToFunction from './route/routeToFunction';
+import RouteToClass from './route/routeToClass';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,7 +19,8 @@ root.render(
       <Route path="/home" Component={App} />
       <Route path="/route" Component={RoutePage} />
       <Route path="/component" Component={ComponentPage} />
-      <Route path='/test' Component={RoutePage2} />
+      <Route path='/routeToFunction' Component={RouteToFunction} />
+      <Route path='/routeToClass' Component={RouteToClass} />
     </Routes>
   </BrowserRouter>
 );

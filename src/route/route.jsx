@@ -25,6 +25,11 @@ function NavigationButton(props) {
   );
 }
 
+function MyComponent() {
+  const myParam = "myValue";
+  return <Link to={`/my-path/${myParam}`}>Go to MyClassComponent</Link>;
+}
+
 
 export default class RoutePage extends Component {
   render() {
@@ -45,7 +50,9 @@ export default class RoutePage extends Component {
           Button of Material-ui: Back Home
         </Button>
         <h3>Route with passing parameters:</h3>
-        <NavigationButton url="../test" title="To test" data={"Message passed from RoutePage"} />
+        <NavigationButton url="../routeToFunction" title="To a Function Component" data={"Message passed from RoutePage"} />
+        <Link to={{ pathname: '../routeToClass', query: { myParams: "Message sent by route page" } }}><Button onClick={()=>{}}>To class Component</Button></Link>
+        <Link to={{ pathname: '../routeToClass', query: { myParams: "Message sent by route page" } }}>TO</Link>
       </div>
     );
   }

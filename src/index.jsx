@@ -13,21 +13,21 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Routes>
-      <Route path="/" Component={App} />
-      <Route path="/undefined" Component={App} />
-      <Route path="/index" Component={App} />
-      <Route path="/home" Component={App} />
-      <Route path="/route" Component={RoutePage} />
-      <Route path="/component" Component={ComponentPage} />
-      <Route path='/routeToFunction' Component={RouteToFunction} />
-      <Route path='/routeToClass' Component={RouteToClass} />
+      <Route path="/" element={<App/>} />
+      <Route path="/undefined" element={<App/>} />
+      <Route path="/index" Component={<App/>} />
+      <Route path="/home" element={<App/>} />
+      <Route path="/route" element={<RoutePage/>} />
+      <Route path="/component" element={<ComponentPage/>} />
+      <Route path='/routeToFunction' element={<RouteToFunction/>} />
+      <Route path='/routeToClass/:id' element={<RouteToClass />} />
     </Routes>
   </BrowserRouter>
 );
 
-//! Important Notes
-//! use Component instead of element in Route tag
-//! in Component field, dont use tag, use Component directly instead
-
+//* Important Notes
+//! use Component instead of element in Route tag (this is not true, v6 can use element)
+//! in Component field, dont use tag, use Component directly instead (use tag in the field of element)
+//* in line 23: path='/routeToClass/:id', the id is the parameter passing to the RouteToClass
 
 

@@ -33,6 +33,8 @@ function MyComponent() {
 
 export default class RoutePage extends Component {
   render() {
+    const value=1;  //value passing to the routeToClass Page
+
     return (
       <div className="routePage">
         <h1>Route Page</h1>
@@ -51,8 +53,11 @@ export default class RoutePage extends Component {
         </Button>
         <h3>Route with passing parameters:</h3>
         <NavigationButton url="../routeToFunction" title="To a Function Component" data={"Message passed from RoutePage"} />
-        <Link to={{ pathname: '../routeToClass', query: { myParams: "Message sent by route page" } }}><Button onClick={()=>{}}>To class Component</Button></Link>
-        <Link to={{ pathname: '../routeToClass', query: { myParams: "Message sent by route page" } }}>TO</Link>
+        <Link to={{ pathname: `../routeToClass/${value}`}}><button onClick={()=>{}}>To class Component</button></Link>  // It is the button wrapped by link
+        <p></p>
+        // For the meaning of value, see the code line 36: 
+        <code> const value=1;</code>
+        <p>which is the value passing to the class component</p>
       </div>
     );
   }

@@ -7,6 +7,7 @@ export default class ComponentPage extends Component{
                 <SetStateExample />
                 <ComponentDidMountExample />
                 <UsingStateToDefineProps />
+                <ConstantComponent />
             </div>
             
         );
@@ -34,20 +35,25 @@ class UsingStateToDefineProps extends Component{
       super(props)
       this.state={
           //Define the content of the inital state, which is variables and their default values
-          name: "a"
+          name: "A"
       }
   }
   // self defined method
-  changeName=()=>{
-    this.setState({name: "b"});
+  changeToB=()=>{
+    this.setState({name: "B"});
+  }
+  changeToA=()=>{
+    this.setState({name: 'A'})
   }
   
   render(){
       return(
           <div>
-              <p>Using State:</p>
+            <h2>Using State to define component:</h2>
+              <p>Example:</p>
               <p>this name is define under the state of the class: {this.state.name}</p>
-              <button onClick={this.changeName}>Change to b</button>
+              <button onClick={this.changeToA}>Change to A</button>
+              <button onClick={this.changeToB}>Change to B</button>
           </div>
       );
   }
@@ -144,4 +150,14 @@ class ComponentDidMountExample extends Component {
         
       );
     }
+}
+
+// constant componenet
+const ConstantComponent=()=>{
+  const text="constant component"
+  return(
+    <div>
+      <p>this is a {text}</p>
+    </div>
+  )
 }

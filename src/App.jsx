@@ -48,6 +48,7 @@ export default class App extends React.Component {
           <p>Yarn Start with gh-pages</p>
           <p>Functions implemented:</p>
           <NavigationButton url="./route" title="Route Page" />
+          <NavigationButton url="./component" title="Component" />
         </header>
       </div>
     );

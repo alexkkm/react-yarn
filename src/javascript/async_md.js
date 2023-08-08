@@ -78,7 +78,7 @@ class MyPromise {
 
 // Test the MyPromise Function
 // 马上输出 ”成功“
-const p1 = new Promise((resolve, reject) => {
+const newPromise = new Promise((resolve, reject) => {
     resolve('成功')
 }).then(res => console.log(res), err => console.log(err))
 

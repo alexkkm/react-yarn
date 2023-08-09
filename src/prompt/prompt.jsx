@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CodePresenter from "./CodePresenter";
 
 const Prompt = () => {
   const [code, setCode] = useState("");
@@ -28,6 +29,11 @@ const Prompt = () => {
     );
   };
 
+
+  const test = `function hi(){
+    console.log("Hello World");
+  }`;
+
   return (
     <div>
       <textarea
@@ -41,6 +47,8 @@ const Prompt = () => {
       <pre id="output"></pre>
 
       <DefaultCodeDisplay />
+
+      <CodePresenter code={test}/>
     </div>
   );
 };

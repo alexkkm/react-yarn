@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-
 const Prompt = () => {
   const [code, setCode] = useState("");
-  const [output, setOutput]= useState("")
 
   const handleCodeChange = (event) => {
     setCode(event.target.value);
-  };
-
-  const handleOutputChange = (event) => {
-    setOutput(event.target.value);
   };
 
   const executeCode = () => {
@@ -24,6 +18,16 @@ const Prompt = () => {
     }
   };
 
+  const DefaultCodeDisplay = () => {
+    return (
+      <pre>
+        <code>
+          {`<span className="code-keyword">const</span> <span className="code-variable">name</span> = <span className="code-string">'John'</span>;`}
+        </code>
+      </pre>
+    );
+  };
+
   return (
     <div>
       <textarea
@@ -35,6 +39,8 @@ const Prompt = () => {
       ></textarea>
       <button onClick={executeCode}>Run Code</button>
       <pre id="output"></pre>
+
+      <DefaultCodeDisplay />
     </div>
   );
 };

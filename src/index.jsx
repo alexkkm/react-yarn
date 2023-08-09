@@ -8,7 +8,7 @@ import RoutePage from './route/route';
 import ComponentPage from './component';
 import RouteToFunction from './route/routeToFunction';
 import RouteToClass from './route/routeToClass';
-import Prompt from './code/prompt';
+import Prompt from './prompt/prompt';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

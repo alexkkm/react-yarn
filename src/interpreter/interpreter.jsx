@@ -3,16 +3,12 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// Components from for prompt
+// Components from for interpreter
 import { classnames } from "./utils/general";
 import { languageOptions } from "./constants/languageOptions";
 import { defineTheme } from "./lib/defineTheme";
 import useKeyPress from "./hooks/useKeyPress";
 import CodeEditorWindow from "./components/CodeEditorWindow";
-import Footer from "./components/Footer";
-import OutputWindow from "./components/OutputWindow";
-import CustomInput from "./components/CustomInput";
-import OutputDetails from "./components/OutputDetails";
 import ThemeDropdown from "./components/ThemeDropdown";
 import LanguagesDropdown from "./components/LanguagesDropdown";
 
@@ -20,53 +16,48 @@ import LanguagesDropdown from "./components/LanguagesDropdown";
 import NavigationButton from "../route/navigationButton";
 
 // Decoration CSS
-import "./prompt.css";
+import "./interpreter.css";
 
-// Default javscript displaying in the prompt
-const javascriptDefault = `/**
-* Example: Binary Search: Search a sorted array for a target value.
-*/
-
-// Time: O(log n)
-
-/*
-const binarySearch = (arr, target) => {
- return binarySearchHelper(arr, target, 0, arr.length - 1);
-};
-
-const binarySearchHelper = (arr, target, start, end) => {
- if (start > end) {
-   return false;
- }
- let mid = Math.floor((start + end) / 2);
- if (arr[mid] === target) {
-   return mid;
- }
- if (arr[mid] < target) {
-   return binarySearchHelper(arr, target, mid + 1, end);
- }
- if (arr[mid] > target) {
-   return binarySearchHelper(arr, target, start, mid - 1);
- }
-};
-
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const target = 5;
-console.log(binarySearch(arr, target));
-*/
-
-function main(){
-  alert("Press F12 to open console");
-}
-main();
+// Default javscript displaying in the interpreter
+const javascriptDefault = `
+/**
+ * Example: Binary Search: Search a sorted array for a target value.
+ */
+ 
+ // Time: O(log n)
+ 
+ 
+ const binarySearch = (arr, target) => {
+  return binarySearchHelper(arr, target, 0, arr.length - 1);
+ };
+ 
+ const binarySearchHelper = (arr, target, start, end) => {
+  if (start > end) {
+    return false;
+  }
+  let mid = Math.floor((start + end) / 2);
+  if (arr[mid] === target) {
+    return mid;
+  }
+  if (arr[mid] < target) {
+    return binarySearchHelper(arr, target, mid + 1, end);
+  }
+  if (arr[mid] > target) {
+    return binarySearchHelper(arr, target, start, mid - 1);
+  }
+ };
+ 
+ const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+ const target = 5;
+ 
+ console.log(binarySearch(arr, target));
+ 
+ alert("Press F12 to open console");
 `;
 
 // The main component
-const Prompt = () => {
+const Interpreter = () => {
   const [code, setCode] = useState(javascriptDefault);
-  const [customInput, setCustomInput] = useState("");
-  const [outputDetails, setOutputDetails] = useState(null);
-  const [processing, setProcessing] = useState(null);
   const [theme, setTheme] = useState("cobalt");
   const [language, setLanguage] = useState(languageOptions[0]);
 
@@ -129,7 +120,7 @@ const Prompt = () => {
 
 
   return (
-    <div className="prompt">
+    <div className="interpreter">
       <div className="BackHomeButton">
         <NavigationButton url="../" title="Back Home Button" />
       </div>
@@ -154,6 +145,7 @@ const Prompt = () => {
           <ThemeDropdown handleThemeChange={handleThemeChange} theme={theme} />
         </div>
       </div>
+
       <div className="flex flex-row space-x-4 items-start px-4 py-4">
         <div className="flex flex-col w-full h-full justify-start items-end">
           <CodeEditorWindow
@@ -165,13 +157,7 @@ const Prompt = () => {
         </div>
 
         <div className="right-container flex flex-shrink-0 w-[30%] flex-col">
-          <OutputWindow outputDetails={outputDetails} />
-          <div className="flex flex-col items-end">
-            <CustomInput
-              customInput={customInput}
-              setCustomInput={setCustomInput}
-            />
-            <button
+          <button
               onClick={
                 executeCode}
               disabled={!code}
@@ -179,17 +165,17 @@ const Prompt = () => {
                 "mt-4 border-2 border-black z-10 rounded-md shadow-[5px_5px_0px_0px_rgba(0,0,0)] px-4 py-2 hover:shadow transition duration-200 bg-white flex-shrink-0",
                 !code ? "opacity-50" : ""
               )}
-            >
-              {processing ? "Processing..." : "Compile and Execute"}
-            </button>
-          </div>
-          {outputDetails && <OutputDetails outputDetails={outputDetails} />}
-          <pre id="output"></pre>
+          >
+          {"Compile and Execute"}
+          </button>
+          <p>Output:</p>
+          <pre id="output"></pre> 
         </div>
+
       </div>
-      <Footer />
+     
     </div>
   );
 };
 
-export default Prompt;
+export default Interpreter;

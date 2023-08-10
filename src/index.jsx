@@ -8,7 +8,7 @@ import RoutePage from './route/route';
 import ComponentPage from './component';
 import RouteToFunction from './route/routeToFunction';
 import RouteToClass from './route/routeToClass';
-import Prompt from './prompt/prompt';
+import Interpreter from './interpreter/interpreter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,7 +22,7 @@ root.render(
       <Route path="/component" element={<ComponentPage/>} />
       <Route path='/routeToFunction' element={<RouteToFunction/>} />
       <Route path='/routeToClass/:id' element={<RouteToClass />} />
-      <Route path='/prompt' element={<Prompt />} />
+      <Route path='/interpreter' element={<Interpreter />} />
     </Routes>
   </BrowserRouter>
 );

@@ -49,6 +49,7 @@ export default class App extends React.Component {
           <p>Functions implemented:</p>
           <NavigationButton url="./route" title="Route Page" />
           <NavigationButton url="./component" title="Component" />
+          <NavigationButton url="./lab" title="Lab" />
         </header>
       </div>
     );

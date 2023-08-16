@@ -34,6 +34,7 @@ export default class Lab extends Component {
         <NavigationButton url="../todolist" title="To Do List" />
         <NavigationButton url="../route" title="Route" />
         <NavigationButton url="../component" title="Component" />
+        <NavigationButton url="../glitch" title="Glitch" />
         
       </div>
     );

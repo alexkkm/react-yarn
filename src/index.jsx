@@ -1,14 +1,19 @@
+// Basic tools
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
+// Pages for routing
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import RoutePage from './route/route';
 import ComponentPage from './component';
 import RouteToFunction from './route/routeToFunction';
 import RouteToClass from './route/routeToClass';
 import Interpreter from './interpreter/interpreter';
+import Lab from './lab';
+import GlitchPage from './glitch/glitch';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +28,8 @@ root.render(
       <Route path='/routeToFunction' element={<RouteToFunction/>} />
       <Route path='/routeToClass/:id' element={<RouteToClass />} />
       <Route path='/interpreter' element={<Interpreter />} />
+      <Route path='/lab' element={<Lab/>} />
+      <Route path='/glitch' element={<GlitchPage/>} />
     </Routes>
   </BrowserRouter>
 );

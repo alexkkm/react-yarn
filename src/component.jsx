@@ -6,6 +6,7 @@ export default class ComponentPage extends Component{
             <div>
                 <SetStateExample />
                 <ComponentDidMountExample />
+                <NotUsingStateToDefineProps name="the name" />
                 <UsingStateToDefineProps />
                 <ConstantComponent />
             </div>
@@ -21,9 +22,9 @@ class NotUsingStateToDefineProps extends Component{
       const a=this.props.name
       return(
       <div>
-          <p>Not Using State:</p>
+          <h2>Not Using State:</h2>
           <p>this name is only define when the class is called: {a}</p>
-          <p>or you can directly use this.props.name:{this.props.name}</p>
+          <p>or you can directly use this.props.name: {this.props.name}</p>
       </div>
       );
   }
@@ -157,6 +158,7 @@ const ConstantComponent=()=>{
   const text="constant component"
   return(
     <div>
+      <h2>Constant Component:</h2>
       <p>this is a {text}</p>
     </div>
   )

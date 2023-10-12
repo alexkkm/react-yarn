@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-yarn/static/css/main.681466f6.css",
-    "main.js": "/react-yarn/static/js/main.b477e772.js",
+    "main.css": "/react-yarn/static/css/main.82712d28.css",
+    "main.js": "/react-yarn/static/js/main.5fb3ad00.js",
     "static/js/266.37118dbc.chunk.js": "/react-yarn/static/js/266.37118dbc.chunk.js",
     "static/js/4450.c55aea8c.chunk.js": "/react-yarn/static/js/4450.c55aea8c.chunk.js",
     "static/js/8849.a22f6135.chunk.js": "/react-yarn/static/js/8849.a22f6135.chunk.js",
@@ -57,11 +57,11 @@
     "static/js/9633.9cb0becf.chunk.js": "/react-yarn/static/js/9633.9cb0becf.chunk.js",
     "static/js/5729.512c699c.chunk.js": "/react-yarn/static/js/5729.512c699c.chunk.js",
     "index.html": "/react-yarn/index.html",
-    "main.681466f6.css.map": "/react-yarn/static/css/main.681466f6.css.map",
-    "main.b477e772.js.map": "/react-yarn/static/js/main.b477e772.js.map"
+    "main.82712d28.css.map": "/react-yarn/static/css/main.82712d28.css.map",
+    "main.5fb3ad00.js.map": "/react-yarn/static/js/main.5fb3ad00.js.map"
   },
   "entrypoints": [
-    "static/css/main.681466f6.css",
-    "static/js/main.b477e772.js"
+    "static/css/main.82712d28.css",
+    "static/js/main.5fb3ad00.js"
   ]
 }
